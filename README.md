@@ -26,7 +26,7 @@ It monitors the performance of the database over time and provides alerts if per
 
 ## Methodology and Technology used  
  
-### Microsoft Visual Studio 
+### Microsoft Visual Studio Community Edition
 Used as the IDE and debugger. 
 
 ### C++ 
@@ -38,7 +38,7 @@ C++ library is used to implement a graphical interface.
 ### sqlAPI++ 
 C++ library that allows PL/SQL statements to be run from C++ functions. 
 
-### Oracle Database 
+### Oracle Express Edition 21c Database 
 The database was used to test the application. 
 
 ### Windows 10/11 
