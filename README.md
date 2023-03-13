@@ -1,4 +1,4 @@
-#QueryCure
+# QueryCure
 
 ## Project scope and Objectives  
 
