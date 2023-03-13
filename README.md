@@ -1,6 +1,6 @@
 # QueryCure
 
-## Project scope and Objectives  
+## Project Scope & Objectives  
 
 Query Cure is a database diagnosis tool which is made using C++. It can be installed on any client/server where the diagnosis is run. The tool will gain insights based on the database and display suggestions on how to improve the performance such as denormalization, indexing, clustering, etc. It involves the following components: 
 
