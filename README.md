@@ -43,3 +43,15 @@ The database was used to test the application.
 
 ### Windows 10/11 
 Used to develop and test the application. 
+
+## Installation 
+To install this project, clone the repository to your local machine and open this repo using Visual Studio.
+
+## Known Issues
+- None
+
+## Contributing
+To contribute to this project, please submit any issues or pull requests on the GitHub repository.
+
+## License
+This project is licensed under the GNU GENERAL PUBLIC License. See the LICENSE file for details.
