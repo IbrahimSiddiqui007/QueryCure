@@ -54,4 +54,4 @@ To install this project, clone the repository to your local machine and open thi
 To contribute to this project, please submit any issues or pull requests on the GitHub repository.
 
 ## License
-This project is licensed under the GNU GENERAL PUBLIC License. See the LICENSE file for details.
+This project is licensed under the GPL-3.0 license. See the LICENSE file for details.
