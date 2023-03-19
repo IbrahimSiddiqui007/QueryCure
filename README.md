@@ -46,8 +46,13 @@ Used to test the application and interact with Oracle databases.
 Used to develop and test the application. 
 
 ## Installation 
-To install this project, clone the repository to your local machine and open this repo using Visual Studio.
-Also, add SQLAPI++ to a properties project
+1. Install Oracle Express Edition, Oracle Install Client and set up a database..
+2. Install wxWidgets 3.1.5 or later on your system.
+3. Install SQLAPI++.
+4. Clone this repository to your local machine `git clone https://github.com/IbrahimSiddiqui007/QueryCure.git`.
+5. Open the solution file `*.sln` in Visual Studio 2022.
+6. Build the project.
+7. Run the application.
 
 ## Suggestions
 Here are some suggestions to consider when working with this software stack:
