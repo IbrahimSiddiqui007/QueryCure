@@ -1,0 +1,4 @@
+"/Users/zeph/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/zeph/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/223.8836.42/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage -B /Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage/cmake-build-debug

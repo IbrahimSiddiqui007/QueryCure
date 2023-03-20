@@ -1,0 +1,15 @@
+﻿  App.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\App.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  DiagnosisAnalysis.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\MainFrame.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  MainFrame.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\MainFrame.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  ManageUsers.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\ManageUsers.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  SecurityFrame.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\SecurityFrame.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  SecurityPage.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\SecurityPage.h(2,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  Test.cpp
+D:\CSCI317\QueryCure_Landing_Security_Manage\BckEnd.h(3,10): fatal  error C1083: Cannot open include file: 'wx/wx.h': No such file or directory
+  Generating Code...

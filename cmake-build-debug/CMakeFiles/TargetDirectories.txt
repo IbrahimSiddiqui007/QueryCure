@@ -1,0 +1,3 @@
+/Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage/cmake-build-debug/CMakeFiles/QueryCure_Landing_Security_Manage.dir
+/Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Untitled/CSCI317/QueryCure_Landing_Security_Manage/cmake-build-debug/CMakeFiles/rebuild_cache.dir
