@@ -70,7 +70,7 @@ SecurityPage::SecurityPage(const wxString& title) : wxFrame(nullptr, wxID_ANY, t
 	AllUserButton->SetBackgroundColour(wxColour(132, 220, 198));
 	ActivityLogButton = new wxButton(panel, wxID_ANY, "Activity Log", wxPoint(400, 50), wxSize(100, 30));
 	ActivityLogButton->SetBackgroundColour(wxColour(132, 220, 198));
-	UsrPrivlageButton = new wxButton(panel, wxID_ANY, "User Privlage", wxPoint(525, 50), wxSize(100, 30));
+	UsrPrivlageButton = new wxButton(panel, wxID_ANY, "User Privilege", wxPoint(525, 50), wxSize(100, 30));
 	UsrPrivlageButton->SetBackgroundColour(wxColour(132, 220, 198));
 	HostDetailsButton = new wxButton(panel, wxID_ANY, "Host details", wxPoint(650, 50), wxSize(100, 30));
 	HostDetailsButton->SetBackgroundColour(wxColour(132, 220, 198));
