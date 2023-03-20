@@ -1,6 +1,6 @@
 #pragma once
 #include <stdio.h>
-//#include <wx/wx.h>
+#include <wx/wx.h>
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -11,21 +11,21 @@
 class Process
 {
 	public:
-		int main();
-		SACommand cmd;
-		SAConnection con;
+		Process();
 		void detectdb();
 		std::string trnsfrmL(std::string st);
 		std::string trnsfrmU(std::string st);
-		void Select(SACommand& cmd, SAString TbleNme);
-		void Statistics(SACommand& cmd, SAString TbleNme);
-		void Explain_Plan(SACommand& cmd, SAString TbleNme);
-		void display(SACommand& cmd, SAString TbleNme, std::string funcName);
-		void connection(SAConnection& con, SACommand& cmd, std::string user, std::string pass, std::string host, std::string port, std::string service);
-		SAConnection& getConnection();
+		void Select(SAString TbleNme);
+		void Statistics(SAString TbleNme);
+		void Explain_Plan(SAString TbleNme);
+		void Suggestions(SAString TbleNme);
+		void display(SAString TbleNme, std::string funcName);
+		void connection(std::string user, std::string pass, std::string sname, std::string hst, std::string prt);
+		SACommand& GetCommand();
 		
 private:
-		int count;
+		SACommand cmd;
+		SAConnection con;
 		SAString TbleNme;
 		SAString SChoice;
 		SAString stats;

@@ -2,9 +2,10 @@
 #include "BckEnd.h"
 #include "DiagnosisAnalysis.h"
 
+
+
 ManageUsers::ManageUsers(const wxString& title) : wxFrame(nullptr, wxID_ANY, title)
 {
-
     m_panel = new wxPanel(this, wxID_ANY);
     m_panel->SetBackgroundColour(wxColour(27, 28, 29));
 
@@ -112,9 +113,9 @@ ManageUsers::ManageUsers(const wxString& title) : wxFrame(nullptr, wxID_ANY, tit
         wxString username = m_usernameText->GetValue();
         wxString password = m_passwordText->GetValue();
 
-        p.connection(p.con, p.cmd, (std::string)username, (std::string)password, (std::string)host, (std::string)port, (std::string)service);
 
-       
+
         });
 }
+
 
