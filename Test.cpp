@@ -252,7 +252,7 @@ void Process::connection(std::string user, std::string pass, std::string sname, 
     try
     {
         //con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST="+host+") (PORT="+port+"))(CONNECT_DATA = (SERVICE_NAME = orcl)))", username,password, SA_Oracle_Client);
-        con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST=LocalHost) (PORT=1521))(CONNECT_DATA = (SID = orcl )))", "CSCI317", "csci317", SA_Oracle_Client);
+        con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST=LocalHost) (PORT=1521))(CONNECT_DATA = (SERVICE_NAME = XEPDB1 )))", "hr", "hr", SA_Oracle_Client);
         cmd.setConnection(&con);
 
     }
