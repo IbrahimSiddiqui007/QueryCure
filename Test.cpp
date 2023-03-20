@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#include "BckEnd.h"
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -7,27 +8,26 @@
 #include <Windows.h>
 #include <iomanip>
 
-std::string trnsfrmL(std::string st)
+Process::Process() {}
+
+std::string Process::trnsfrmL(std::string st)
 {
     std::transform(st.begin(), st.end(), st.begin(), std::tolower);
     return st;
 }
 
-std::string trnsfrmU(std::string st)
+std::string Process::trnsfrmU(std::string st)
 {
     std::transform(st.begin(), st.end(), st.begin(), std::toupper);
     return st;
 }
 
-void detectdb()
+void Process::detectdb()
 {
     HKEY key;
-
-
-
 }
 
-void display(SACommand& cmd, SAString TbleNme, std::string funcName)
+void Process::display(SAString TbleNme, std::string funcName)
 {
 
     std::string functionName = trnsfrmL(funcName);
@@ -110,7 +110,7 @@ void display(SACommand& cmd, SAString TbleNme, std::string funcName)
 
 }
 
-void Explain_Plan(SACommand& cmd, SAString TbleNme)
+void Process::Explain_Plan(SAString TbleNme)
 {
     std::string FuncName = __FUNCTION__;
 
@@ -153,11 +153,11 @@ void Explain_Plan(SACommand& cmd, SAString TbleNme)
         << std::setfill(' ')
         << std::endl;
 
-    display(cmd, TbleNme, FuncName);
+    display(TbleNme, FuncName);
 
 }
 
-void Statistics(SACommand& cmd, SAString TbleNme)
+void Process::Statistics(SAString TbleNme)
 {
     std::string FuncName = __FUNCTION__;
     std::string StatChoice;
@@ -203,11 +203,11 @@ void Statistics(SACommand& cmd, SAString TbleNme)
     cmd.setCommandText("SELECT * FROM " + stats + " WHERE TABLE_NAME = '" + TbleNme + "'");
     cmd.Execute();
 
-    display(cmd, TbleNme, FuncName);
+    display(TbleNme, FuncName);
 
 }
 
-void Select(SACommand& cmd, SAString TbleNme)
+void Process::Select(SAString TbleNme)
 {
     std::string FuncName = __FUNCTION__;
 
@@ -216,7 +216,7 @@ void Select(SACommand& cmd, SAString TbleNme)
         cmd.setCommandText("SELECT * FROM " + TbleNme);
         cmd.Execute();
         // Call the display function to display the result set
-        display(cmd, TbleNme, FuncName);
+        display(TbleNme, FuncName);
     }
     catch (SAException& ex) {
         // Handle any exceptions that occur during execution
@@ -225,35 +225,34 @@ void Select(SACommand& cmd, SAString TbleNme)
 }
 // Discover automatically
 // If can't ask user
-void connection(SAConnection& con, SACommand& cmd)
+void Process::connection(std::string user, std::string pass, std::string sname, std::string hst, std::string prt)
 {
-    SAString username, password, service_name, host, port;
-    std::string user, pass, sname, hst, prt;
+    /*std::string user, pass, sname, hst, prt;*/
 
-    std::cout << "Please enter the username" << std::endl;
-    std::cin >> user;
+    /*std::cout << "Please enter the username" << std::endl;
+    std::cin >> user;*/
     username = user.c_str();
 
-    std::cout << "Please enter the password" << std::endl;
-    std::cin >> pass;
+    /*std::cout << "Please enter the password" << std::endl;
+    std::cin >> pass;*/
     password = pass.c_str();
 
-    std::cout << "Please enter the host address" << std::endl;
-    std::cin >> hst;
+    /*std::cout << "Please enter the host address" << std::endl;
+    std::cin >> hst;*/
     host = hst.c_str();
 
-    std::cout << "Please enter the port address" << std::endl;
-    std::cin >> prt;
+    /*std::cout << "Please enter the port address" << std::endl;
+    std::cin >> prt;*/
     port = prt.c_str();
 
-    std::cout << "Please enter the service name" << std::endl;
-    std::cin >> sname;
+    /*std::cout << "Please enter the service name" << std::endl;
+    std::cin >> sname;*/
     service_name = sname.c_str();
 
     try
     {
-        con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST="+host+") (PORT="+port+"))(CONNECT_DATA = (SERVICE_NAME = XEPDB1)))", username,password, SA_Oracle_Client);
-        //con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST=LocalHost) (PORT=1521))(CONNECT_DATA = (SERVICE_NAME = XEPDB1)))", "system", "1234", SA_Oracle_Client);
+        //con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST="+host+") (PORT="+port+"))(CONNECT_DATA = (SERVICE_NAME = XEPDB1)))", username,password, SA_Oracle_Client);
+        con.Connect("(DESCRIPTION=(ADDRESS=(PROTOCOL=tcp) (HOST=LocalHost) (PORT=1521))(CONNECT_DATA = (SERVICE_NAME = XEPDB1)))", "hr", "hr", SA_Oracle_Client);
         cmd.setConnection(&con);
 
     }
@@ -275,7 +274,7 @@ void connection(SAConnection& con, SACommand& cmd)
     std::cout << "Connected to Oracle Server!" << std::endl;
 }
 
-void Suggestions(SACommand& cmd, SAString TbleNme)
+void Process::Suggestions(SAString TbleNme)
 {
     std::string FuncName = __FUNCTION__;
 
@@ -314,92 +313,93 @@ void Suggestions(SACommand& cmd, SAString TbleNme)
     //MV, DENORMALIZATION, DECOMPOSTION, DYNAMIC VIEWS, CLUSTERING, PARTIONING. 
 
 
-    
-  
-
     //index
     //denorm
     //cluster
 }
 
-
-int main()
-{
-    SACommand cmd;
-    SAConnection con;
-
-    bool quit = false;
-    std::string tableChoice;
-    int choice;
-    SAString TbleNme;
-
-    connection(con,cmd);
-
-    while (!quit)
-    {
-        std::cout << "Please enter the table you want to use" << std::endl;
-        std::cin >> tableChoice;
-        TbleNme = tableChoice.c_str();
-
-        std::cout << "Please choose your option:" << "\n"
-            << "1. Display data" << "\n"
-            << "2. Explain_plan" << "\n"
-            << "3. Statistics" << "\n"
-            << "4. Suggestions" << "\n"
-            << "0 to quit" << "\n"
-            << std::endl;
-
-        std::cin >> choice;
-
-        switch (choice)
-        {
-            case 1:
-            {
-                Select(cmd, TbleNme);
-                break;
-            }
-            case 2:
-            {
-                Explain_Plan(cmd, TbleNme);
-                break;
-            }
-            case 3:
-            {
-                Statistics(cmd, TbleNme);
-                break;
-            }
-            case 4:
-            {
-                Suggestions(cmd, TbleNme);
-                break;
-            }
-            case 5:
-            {
-               // Security(cmd, TbleNme);
-                break;
-            }
-            case 0:
-            {
-                exit(0);
-                break;
-            }
-            default:
-            {
-               break;
-            }
-        }
-    }
-
-    return 0;
+SACommand& Process::GetCommand() {
+    return cmd;
 }
 
-// connect gui and connection function
+//int main()
+//{
+//    SACommand cmd;
+//    SAConnection con;
+//
+//    bool quit = false;
+//    std::string tableChoice;
+//    int choice;
+//    SAString TbleNme;
+//
+//    connection(con,cmd);
+//
+//    while (!quit)
+//    {
+//        std::cout << "Please enter the table you want to use" << std::endl;
+//        std::cin >> tableChoice;
+//        TbleNme = tableChoice.c_str();
+//
+//        std::cout << "Please choose your option:" << "\n"
+//            << "1. Display data" << "\n"
+//            << "2. Explain_plan" << "\n"
+//            << "3. Statistics" << "\n"
+//            << "4. Suggestions" << "\n"
+//            << "0 to quit" << "\n"
+//            << std::endl;
+//
+//        std::cin >> choice;
+//
+//        switch (choice)
+//        {
+//            case 1:
+//            {
+//                Select(cmd, TbleNme);
+//                break;
+//            }
+//            case 2:
+//            {
+//                Explain_Plan(cmd, TbleNme);
+//                break;
+//            }
+//            case 3:
+//            {
+//                Statistics(cmd, TbleNme);
+//                break;
+//            }
+//            case 4:
+//            {
+//                Suggestions(cmd, TbleNme);
+//                break;
+//            }
+//            case 5:
+//            {
+//               // Security(cmd, TbleNme);
+//                break;
+//            }
+//            case 0:
+//            {
+//                exit(0);
+//                break;
+//            }
+//            default:
+//            {
+//               break;
+//            }
+//        }
+//    }
+//
+//    return 0;
+//}
+
+// connect gui and connection function, get host,port,
 // get table and convert into string array
-// 
+// make error for db dont exist 
 // get table structure
 // get different type of statistics
 
 // what they have done on the db
 // list of connections and privileges
 
-// if time create spool function
+// Scheduling (important)
+

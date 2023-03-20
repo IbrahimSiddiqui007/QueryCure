@@ -3,3 +3,5 @@ C:\Users\hassa\Documents\C++_Projects\QueryCure_Landing_Page\x64\Debug\FirstGUI.
 F:\Uni\317\QueryCure_Landing_Security_Manage\x64\Debug\FirstGUI.exe
 E:\QueryCure_Landing_Security_Manage\x64\Debug\FirstGUI.exe
 D:\QueryCure_Landing_Security_Manage\x64\Debug\FirstGUI.exe
+C:\CSCI317\QueryCure_Landing_Security_Manage\x64\Debug\FirstGUI.exe
+E:\CSCI317\QueryCure_Landing_Security_Manage\x64\Debug\FirstGUI.exe

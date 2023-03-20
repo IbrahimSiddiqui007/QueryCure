@@ -29,6 +29,12 @@
     <ClInclude Include="SecurityPage.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="DiagnosisAnalysis.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="ManageUsers.cpp" />
+    <ClCompile Include="SecurityFrame.cpp" />
+    <ClCompile Include="SecurityPage.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -124,7 +130,7 @@
       <AdditionalIncludeDirectories>$(WXWIN)\include\msvc;F:\Uni\317\SQLAPI\include;D:\SQLAPI\include;$(WXWIN)\include\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(WXWIN)\lib\vc_x64_lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>F:\Uni\317\SQLAPI\vs2022\x86_64\lib\sqlapi.lib</AdditionalDependencies>
